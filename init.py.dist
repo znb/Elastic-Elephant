@@ -1,0 +1,12 @@
+#!/usr/bin/python
+# Authenticate and connect to Amazon AWS
+
+
+def load_credentials():
+    """Store our credentials for auth"""
+    ACCESSKEY = "YOUR_ACCESS_KEY"
+    SECRETKEY = "YOUR_SECRET_KEY"
+    REGION = "eu-west-1"
+
+    return ACCESSKEY, SECRETKEY, REGION
+
