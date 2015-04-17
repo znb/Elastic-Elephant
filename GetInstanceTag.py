@@ -3,7 +3,6 @@
 
 from MaltegoTransform import *
 import sys
-import os
 import boto.ec2
 from init import load_credentials
 
