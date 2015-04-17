@@ -29,6 +29,7 @@ Instance Scripts
  * GetInstanceInfo.py - Gets all the information for a specific Instance
  * GetInstancePublicIp.py - Gets the public IP address for a specific Instance
  * GetInstanceSecurityGroups.py - Gets all the Security Groups applied to an Instance
+ * GetInstanceState.py - Get the running state of an Instance
 
 
 Security Group Scripts
@@ -36,4 +37,7 @@ Security Group Scripts
 
  * GetGlobalSecurityGroups.py - Gets all the Security Groups in use in an AWS region
  * GetSecurityGroupRules.py - Gets the Security Group rules
-
+ * GetIngressProtocolPort.py - THIS IS BROKEN
+ * GetIngressSource.py - SOON
+ * GetEgressProtocolPort.py - SOON
+ * GetEgressDestination.py - SOON
