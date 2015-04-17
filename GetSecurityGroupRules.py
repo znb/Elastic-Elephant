@@ -22,16 +22,11 @@ try:
         for z in range(group_nums):
             group_id = i.instances[0].groups[z].id
             sg_name = conn.get_all_security_groups(group_ids=group_id)[0]
-            # Match on our search string
             if str(sg_name).split(":")[1] == str(sec_group):
-                # Security Group Ingress Rules
                 ingress= m.addEntity("matterasmus.AmazonEC2IngressRules", "Ingress Rules")
-                ingress.addAdditionalFields("IngressRules", "Ingress Rules", "strict", "Ingress Rules")
-
-                # Security Group Egress Rules
+                ingress.addAdditionalFields("SecurityGroup", "Group Name", "strict", str(sg_name).split(":")[1])
                 egress = m.addEntity("matterasmus.AmazonEC2EgressRules", "Egress Rules")
-                egress.addAdditionalFields("EgressRules", "Egress Rules", "strict", "Egress rules")
-
+                egress.addAdditionalFields("SecurityGroup", "Group Name", "strict", str(sg_name).split(":")[1])
 
     m.addUIMessage("Completed.")
 
