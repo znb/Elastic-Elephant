@@ -24,8 +24,10 @@ try:
             sg_name = conn.get_all_security_groups(group_ids=group_id)[0]
             if str(sg_name).split(":")[1] == str(sec_group):
                 ingress= m.addEntity("matterasmus.AmazonEC2IngressRules", "Ingress Rules")
+                ingress.addAdditionalFields("GroupID", "Group ID", "strict", str(group_id))
                 ingress.addAdditionalFields("SecurityGroup", "Group Name", "strict", str(sg_name).split(":")[1])
                 egress = m.addEntity("matterasmus.AmazonEC2EgressRules", "Egress Rules")
+                egress.addAdditionalFields("GroupID", "Group ID", "strict", str(group_id))
                 egress.addAdditionalFields("SecurityGroup", "Group Name", "strict", str(sg_name).split(":")[1])
 
     m.addUIMessage("Completed.")
