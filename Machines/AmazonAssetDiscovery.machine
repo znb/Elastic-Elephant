@@ -1,0 +1,15 @@
+//Welcome to Maltego Machines!
+
+machine("matterasmus.AmazonEC2AssetDiscovery", 
+        displayName:"Amazon EC2 Asset Discovery", 
+        author:"Matt Erasmus",
+        description: "Find out what's running in our region") {
+
+
+    start {
+           run("matterasmus.EC2GetInstances")
+           run("matterasmus.EC2GetInstanceInformation")
+
+
+    }
+}

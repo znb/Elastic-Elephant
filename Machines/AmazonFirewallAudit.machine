@@ -1,0 +1,18 @@
+//Welcome to Maltego Machines!
+
+machine("matterasmus.AmazonEC2FirewallAudit", 
+        displayName:"Amazon EC2 Firewall Audit", 
+        author:"Matt Erasmus",
+        description: "Check all the firewall rules for your EC2 Region") {
+
+    start {
+
+        run("matterasmus.EC2GetGlobalSecurityGroups")
+        run("matterasmus.EC2GetSecurityGroupRules")
+        run("matterasmus.EC2GetIngressProtocolandPort")
+        run("matterasmus.EC2GetIngressSource")
+        run("matterasmus.EC2GetEgressProtocolandPort")
+        run("matterasmus.EC2GetEgressDestination")
+
+    }
+}

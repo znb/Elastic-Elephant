@@ -1,0 +1,15 @@
+//Welcome to Maltego Machines!
+
+machine("matterasmus.AmazonEC2RunningInstances", 
+    displayName:"Amazon EC2 Running Instances", 
+    author:"Matt Erasmus",
+    description: "Get all the running instances in an EC2 Region") {
+
+
+    start {
+        
+        run("matterasmus.EC2GetInstances")
+        run("matterasmus.EC2GetInstanceState")
+
+    }
+}
