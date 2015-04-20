@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# Instance Information
+# Get all the instances in our Region
 
 from MaltegoTransform import *
 import sys
@@ -19,12 +19,11 @@ try:
 
     for x in range(0, len(instances)):
         instance = instances[x].instances
-        ent = m.addEntity('matterasmus.AmazonEC2Instance', instance[0].id)
-        ent.addAdditionalFields("InstanceID", "Instance ID", "strict", str(instance[0].id))
+        ent = m.addEntity('matterasmus.AmazonEC2Instance', str(instance[0].id))
+        ent.addAdditionalFields("Instance Name", "InstanceName", "strict", str(instance[0].tags['Name']))
     else:
         m.addUIMessage("Completed.")
 except Exception as e:
     m.addUIMessage(str(e))
 
 m.returnOutput()
-
