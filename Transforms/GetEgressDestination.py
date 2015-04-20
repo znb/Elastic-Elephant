@@ -22,7 +22,7 @@ try:
         group_nums = len(i.instances[0].groups)
         for z in range(group_nums):
             group_id = i.instances[0].groups[z].id
-            if str(group_id) == str(ingress_src):
+            if str(group_id) == str(egress_dst):
                 egress_rules = conn.get_all_security_groups(group_ids=group_id)[0].rules_egress
                 number_of_egress = len(egress_rules)
                 for g in range(number_of_egress):
