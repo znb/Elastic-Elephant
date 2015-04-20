@@ -6,11 +6,10 @@ import sys
 import boto.ec2
 from init import load_credentials
 
-
 creds = load_credentials()
+REGION = creds[2]
 
 instance_check = sys.argv[1]
-REGION = creds[2]
 
 m = MaltegoTransform()
 
