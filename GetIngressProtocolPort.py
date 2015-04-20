@@ -3,14 +3,17 @@
 
 from MaltegoTransform import *
 import boto.ec2
+import sys
 from init import load_credentials
 
 creds = load_credentials()
 REGION = creds[2]
 
-sec_group = sys.argv[1]
 
 m = MaltegoTransform()
+m.parseArguments(sys.argv[1])
+sec_group = m.getVar("GroupID")
+m.addUIMessage("Group ID: ", str(sec_group))
 
 try:
     conn = boto.ec2.connect_to_region(REGION, aws_access_key_id=creds[0], aws_secret_access_key=creds[1])
