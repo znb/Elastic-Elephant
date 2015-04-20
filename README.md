@@ -8,11 +8,13 @@ You will also need the Maltego Python library from [here](http://www.paterva.com
 
 We want to find out what Instances are running with what Security Groups etc. 
 
+The easiest way to run this (especially the firewall stuff) is via a Machine (Coming soonish)
+
 The maltezon.mtz file contains the Entities needed for this to work. 
 
 
-Script overview
----------------
+Scripts overview
+----------------
 
 
 Default/Init Scripts
@@ -37,7 +39,13 @@ Security Group Scripts
 
  * GetGlobalSecurityGroups.py - Gets all the Security Groups in use in an AWS region
  * GetSecurityGroupRules.py - Gets the Security Group rules
- * GetIngressProtocolPort.py - THIS IS BROKEN
- * GetIngressSource.py - SOON
- * GetEgressProtocolPort.py - SOON
- * GetEgressDestination.py - SOON
+ * GetIngressProtocolPort.py - Get all the protocols/ports assigned to our Ingress rules
+ * GetIngressSource.py - Get the source address assigned to our protocol/ports
+ * GetEgressProtocolPort.py - Get all the protocols/ports assigned to out Egress rules
+ * GetEgressDestination.py - Get the destination address assigned to our protocol/ports
+
+
+Machines
+--------
+
+ * SOON
