@@ -8,7 +8,7 @@ You will also need the Maltego Python library from [here](http://www.paterva.com
 
 We want to find out what Instances are running with what Security Groups etc. 
 
-The easiest way to run this (especially the firewall stuff) is via a Machine (Coming soonish)
+The easiest way to run this (especially the firewall stuff) is via a Machine 
 
 The maltezon.mtz file contains the Entities needed for this to work. 
 
@@ -48,4 +48,11 @@ Security Group Scripts
 Machines
 --------
 
- * SOON
+These machines can be used to automate common tasks you'd use this framework for.
+
+ * EC2 Asset Discovery - Discover all instances and their information in your region
+ * EC2 Running Instances - Find all running instances in a region 
+	TODO: Need to figure out how to prune non-running instances
+ * EC2 Firewall Audit - Just pull the Security Group information for a region
+
+(They're pretty basic for the time being)
