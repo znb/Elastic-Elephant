@@ -13,6 +13,17 @@ The easiest way to run this (especially the firewall stuff) is via a Machine
 The maltezon.mtz file contains the Entities needed for this to work. 
 
 
+Installation
+------------
+
+
+1. Import the maltezon.mtz file into Maltego as a configuration.
+2. Rename init.py.dist to init.py and edit accordingly with your Amazon AWS credentials and default Amazon region.
+3. Move the init.py file into the Transforms directory.
+4. Download the Maltego Python library and extract to the Transforms directory.
+5. You should be good to go.
+
+
 Scripts overview
 ----------------
 
