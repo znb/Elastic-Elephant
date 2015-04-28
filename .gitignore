@@ -1,2 +1,6 @@
+.gitignore
+*.pyc
 .ropeproject
+Transforms/init.py
 init.py
+Transforms/MaltegoTransform.py
