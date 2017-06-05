@@ -21,6 +21,8 @@ try:
         ent.addAdditionalFields("KeyName", "Key Name", "strict", instance.key_name)
         ent.addAdditionalFields("PrivateIp", "Private Ip", "strict", instance.private_ip_address)
         ent.addAdditionalFields("RegionName", "Region Name", "strict", REGION)
+        ent.addAdditionalFields("InstanceState", "Instance State", True, str(instance.state['Name']))
+        ent.addAdditionalFields("LaunchDate", "Launch Date", True, str(instance.launch_time))
     else:
         mt.addUIMessage("Completed.")
 except Exception as e:
