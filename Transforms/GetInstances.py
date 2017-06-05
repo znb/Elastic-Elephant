@@ -3,24 +3,20 @@
 
 from MaltegoTransform import *
 import sys
-import boto.ec2
-from init import load_credentials
+import boto3
 
-
-creds = load_credentials()
-
+# Get our region name from Maltego
 REGION = sys.argv[1]
 
 m = MaltegoTransform()
 
 try:
-    conn = boto.ec2.connect_to_region(REGION, aws_access_key_id=creds[0], aws_secret_access_key=creds[1])
-    instances = conn.get_all_instances()
+    client = boto3.resource('ec2', region_name=REGION)
+    instances = client.instances.all()
 
-    for x in range(0, len(instances)):
-        instance = instances[x].instances
-        ent = m.addEntity('matterasmus.AmazonEC2Instance', str(instance[0].id))
-        ent.addAdditionalFields("Instance Name", "InstanceName", "strict", str(instance[0].tags['Name']))
+    for instance in instances:
+        ent = m.addEntity('matterasmus.AmazonEC2Instance', instance.tags[0].get("Value"))
+        ent.addAdditionalFields("Instance Id", "InstanceId", "strict", str(instance.id))
     else:
         m.addUIMessage("Completed.")
 except Exception as e:
