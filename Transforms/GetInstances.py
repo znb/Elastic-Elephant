@@ -5,15 +5,15 @@ from MaltegoTransform import *
 import sys
 import boto3
 
-# Get our region name from Maltego
-REGION = sys.argv[1]
-
 mt = MaltegoTransform()
+mt.parseArguments(sys.argv)
+REGION = mt.getVar('RegionName')
 
 try:
     client = boto3.resource('ec2', region_name=REGION)
     instances = client.instances.all()
 
+    mt.addUIMessage("Getting instances in " + REGION)
     for instance in instances:
         ent = mt.addEntity('matterasmus.AmazonEC2Instance', instance.tags[0].get("Value"))
         ent.addAdditionalFields("Instance Id", "InstanceId", "strict", str(instance.id))
@@ -24,6 +24,6 @@ try:
     else:
         mt.addUIMessage("Completed.")
 except Exception as e:
-    m.addUIMessage(str(e))
+    mt.addUIMessage(str(e))
 
 mt.returnOutput()
