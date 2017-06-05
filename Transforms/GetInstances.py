@@ -20,6 +20,7 @@ try:
         ent.addAdditionalFields("Instance Type", "InstanceType", "strict", instance.instance_type)
         ent.addAdditionalFields("Key Name", "KeyName", "strict", instance.key_name)
         ent.addAdditionalFields("Private IP", "PrivateIp", "strict", instance.private_ip_address)
+        ent.addAdditionalFields("Region Name", "RegionName", "strict", REGION)
     else:
         m.addUIMessage("Completed.")
 except Exception as e:
