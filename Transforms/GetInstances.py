@@ -17,6 +17,9 @@ try:
     for instance in instances:
         ent = m.addEntity('matterasmus.AmazonEC2Instance', instance.tags[0].get("Value"))
         ent.addAdditionalFields("Instance Id", "InstanceId", "strict", str(instance.id))
+        ent.addAdditionalFields("Instance Type", "InstanceType", "strict", instance.instance_type)
+        ent.addAdditionalFields("Key Name", "KeyName", "strict", instance.key_name)
+        ent.addAdditionalFields("Private IP", "PrivateIp", "strict", instance.private_ip_address)
     else:
         m.addUIMessage("Completed.")
 except Exception as e:
