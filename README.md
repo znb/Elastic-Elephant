@@ -6,11 +6,11 @@ These are Maltego Transforms to talk to Amazon via [Boto](https://aws.amazon.com
 
 You will also need the Maltego Python library from [here](http://www.paterva.com/web6/documentation/developer-local.php).
 
-We want to find out what Instances are running with what Security Groups etc. 
+We want to find out what Instances are running with what Security Groups etc.
 
-The easiest way to run this (especially the firewall stuff) is via a Machine 
+The easiest way to run this (especially the firewall stuff) is via a Machine
 
-The maltezon.mtz file contains the Entities needed for this to work. 
+The maltezon.mtz file contains the Entities needed for this to work.
 
 
 Installation
@@ -18,20 +18,12 @@ Installation
 
 
 1. Import the maltezon.mtz file into Maltego as a configuration.
-2. Rename init.py.dist to init.py and edit accordingly with your Amazon AWS credentials and default Amazon region.
-3. Move the init.py file into the Transforms directory.
-4. Download the Maltego Python library and extract to the Transforms directory.
-5. You should be good to go.
+2. Download the Maltego Python library and extract to the Transforms directory.
+3. You should be good to go.
 
 
 Scripts overview
 ----------------
-
-
-Default/Init Scripts
---------------------
-
- * init.py.dist - Init stuff. Amazon credentials and default AWS region
 
 
 Instance Scripts
@@ -62,7 +54,7 @@ Machines
 These machines can be used to automate common tasks you'd use this framework for.
 
  * EC2 Asset Discovery - Discover all instances and their information in your region
- * EC2 Running Instances - Find all running instances in a region 
+ * EC2 Running Instances - Find all running instances in a region
 	TODO: Need to figure out how to prune non-running instances
  * EC2 Firewall Audit - Just pull the Security Group information for a region
 
